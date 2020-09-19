@@ -10,5 +10,6 @@ router = routers.DefaultRouter()
 router.register(r"node", views.NodeViewSet, basename="node")
 router.register(r"moisture", views.MoistureViewSet, basename="moisture")
 
-urlpatterns = [path("", include(router.urls))]
-
+urlpatterns = [
+    path('humedad-sectores', views.MoistureGeneralView.as_view(), name="general_view"),
+    path("", include(router.urls))]
